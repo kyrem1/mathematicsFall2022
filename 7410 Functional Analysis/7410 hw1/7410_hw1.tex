@@ -186,7 +186,47 @@
 
   \textbf{(b)}: Fix $0<p<\infty$ and prove that $L^p(X,\mu)$ is a vector space under the natural operations of addition and scalar multiplication.
 
-  \textbf{(c)}: Fix $0<p<1$ and define $d:L^p(X,\mu)\times L^p(X,\mu) \to [0,\infty)$ by $d(f,g) = \norm{f-g}_p^p$. Prove that $d$ is a metric and that addition and multiplication are continuous with respect to $d$. \\
+  \begin{proof}
+    Fix $f,g\in L^p(X,\mu)$. Then as $|f+g|\leq 2(|f|+|g|)$ and $x\mapsto x^p$ is increasing,
+    \[
+      \norm{f+g}_p^p = \int |f+g|^p \dd{\mu} \leq \int 2^p(|f|+|g|)^p\dd{\mu} = 2^p(\norm{f}_p^p + \norm{g}_p^p) < +\infty,
+    \]
+    so $f+g\in L^p(X,\mu)$. For $\lambda\in \C$,
+    \[
+      \norm{\lambda f}_p = \lr{\int |\lambda f|^p\dd{\mu}}^{1/p} = |\lambda| \norm{f}_p < +\infty,
+    \]
+    so $\lambda f\in L^p(X,\mu)$. Thus $L^p(X,\mu)$ is a vector space.
+  \end{proof}
+
+  \textbf{(c)}: Fix $0<p<1$ and define $d:L^p(X,\mu)\times L^p(X,\mu) \to [0,\infty)$ by $d(f,g) = \norm{f-g}_p^p$. Prove that $d$ is a metric and that addition and multiplication are continuous with respect to $d$.
+
+  \begin{proof}
+    Let $f,g\in L^p(X,\mu)$. Applying part (a) and that $x\mapsto x^p$ is increasing,
+    \[
+      \norm{f+g}_p^p = \int |f+g|^p \dd{\mu} \leq \int (|f|+|g|)^p\dd{\mu} \overset{(a)}{\leq} \int |f|^p+|g|^p\dd{\mu} = \norm{f}_p^p + \norm{g}_p^p.
+    \]
+    Then for $f,g,h\in L^p(X,\mu)$,
+    \[
+      d(f,h) = \norm{f-h}_p^p = \norm{f-g+g-h}_p^p \leq \norm{f-g}_p^p + \norm{g-h}_p^p = d(f,g) + d(g,h).
+    \]
+    Clearly, $d(f,f) = 0$ and $d(f,g) = d(g,f)$. Suppose that $d(f,g)=0$. Then $\int |f-g|^p \dd{\mu} =0$, whence $|f-g| = 0$ a.e. so $f=g$ a.e. Thus $d$ is a metric. \\
+
+    Now suppose that $f_n\to f$ and $g_n\to g$ in $L^p(X,\mu)$ with respect to $d$. Then applying the above inequality,
+    \[
+      d(f_n+g_n, f+g) = \norm{f_n-f + g_n-g}_p^p \leq \norm{f_n-f}_p^p + \norm{g_n-g}_p^p = d(f_n,f) + d(g_n,g) \xrightarrow{n\to\infty}0,
+    \]
+    so addition is continuous with respect to $d$. \\
+
+    Lastly, assume that $(\lambda_n,f_n)\to (\lambda,f)$ in the product topology, i.e. $\lambda_n\to\lambda$ in $\C$ and $f_n\to f$ with respect to $d$. Note that
+    \[
+      \lrvert{\norm{f_n}_p^p-\norm{f}_p^p} \leq \norm{f_n-f}_p^p \xrightarrow{n\to\infty}0,
+    \]
+    so there exists some $C>0$ such that $\norm{f_n}_p^p\leq C$ for all $n\in\N$. We compute,
+    \[
+      d(\lambda_n f_n,\lambda f) = \norm{\lambda_n f_n -\lambda f}_p^p \leq \norm{\lambda_n f_n- \lambda f_n}_p^p + \norm{\lambda f_n - \lambda f}_p^p\leq C|\lambda_n-\lambda|^p + |\lambda|^p\norm{f_n-f}_p^p \xrightarrow{n\to\infty}0,
+    \]
+    so scalar multiplication is continuous with respect to $d$.
+  \end{proof}
 
 \end{homeworkProblem}
 
@@ -236,7 +276,7 @@
 \end{homeworkProblem}
 
 \begin{homeworkProblem}
-  Show that $l^\infty$ is not separable.\\
+  Show that $l^\infty$ is not separable.
 
   \begin{proof}
     For each $I\in\ms{P}(\N)$, define an element $a_I\in l^{\infty}(\N)$ by $a_I(n) = \ind_{I}(n)$. Then for $I\neq J\in \ms{P}(\N)$, $B_{1/2}(a_I)\cap B_{1/2}(a_J) = \emptyset$. Thus, we have an uncountable family of pairwise disjoint balls $\{ B_{1/2}(a_I)\}_{I\in\ms{P}(\N)}$. Any dense subset of $l^{\infty}(\N)$ must intersect each of these balls, whence by disjointness this set must be uncountable. By contraposition $l^{\infty}(\N)$ is not separable.
