@@ -179,7 +179,7 @@
 \begin{proof}
   Note that the constant function $1\in B$ has support $(-\infty, \infty)$ which is not compact, so $\mf{b}\subsetneq B$. Suppose that $f\in \mf{b}$ and $\phi\in B$. Then $\supp(\phi f)\sub \supp(f)$, whence as a closed subset of a compact set, $\supp(\phi f)$ is itself compact. Also for $f,g\in \mf{b}$, $\supp(f+g)\sub \supp(f)\cup\supp(g)$, whence it is similarly compact. So $\mf{b}$ is a proper ideal of $B$. \\
 
-  Suppose, for the sake of contradiction, that there exists a $p\in I$ such that $f(p) = 0$ for all $f\in \mf{b}$. For $f\in B$, as $\mf{b}$ is dense in $B$ with respect to the sup-norm, there exists a sequence $\{ f_n\}_{n=1}^{\infty}$ in $\mf{b}$ such that $\norm{f-f_n}_{\rm{sup}}\xrightarrow{n\to\infty}0$. Then $f_n\to f$ pointwise, so $f(p) = \lim_{n\to\infty}f_n(p) = 0$ by assumption. So every function $f\in B$ vanishes at $p$, which is absurd and contradicts Uryshon's lemma. 
+  Suppose, for the sake of contradiction, that there exists a $p\in I$ such that $f(p) = 0$ for all $f\in \mf{b}$. For $f\in B$, as $\mf{b}$ is dense in $B$ with respect to the sup-norm, there exists a sequence $\{ f_n\}_{n=1}^{\infty}$ in $\mf{b}$ such that $\norm{f-f_n}_{\rm{sup}}\xrightarrow{n\to\infty}0$. Then $f_n\to f$ pointwise, so $f(p) = \lim_{n\to\infty}f_n(p) = 0$ by assumption. So every function $f\in B$ vanishes at $p$, which is absurd and contradicts Uryshon's lemma.
 \end{proof}
 
 \end{homeworkProblem}
@@ -229,18 +229,55 @@
     Let $f\in \mf{l}_p$ and $U\sub I$ an open neighborhood of $p$ such that $f\vert_{U} = 0$. By Uryshon's lemma, there exists a $g\in A$ such that $g\vert_{I\setminus U} = 0$ and $g(p) = 1$. Then $fg=0\in\mf{p}$, whence by primality $f\in \mf{p}$ as $g\not\in \m_p\supseteq \mf{p}$.
   \end{proof}
 
-  \textbf{(b)}: Show that for $p_1,p_2\in I, p_1\neq p_2$, we have $\mf{l}_{p_1}+\mf{l}_{p_2} = A$. Deduce that every $\mf{p}\in \Spec(A)$ is contained in a \emph{unique} $\mf{m}\in\Specm(A)$. It follows that every closed irreducible subset of $\Spec(A)$ contains a unique closed point.\\
+  \textbf{(b)}: Show that for $p_1,p_2\in I, p_1\neq p_2$, we have $\mf{l}_{p_1}+\mf{l}_{p_2} = A$. Deduce that every $\mf{p}\in \Spec(A)$ is contained in a \emph{unique} $\mf{m}\in\Specm(A)$. It follows that every closed irreducible subset of $\Spec(A)$ contains a unique closed point.
+
+  \begin{proof}
+    Suppose, for the sake of contradiction, that $\mf{p}\sub \mf{m}_{p_1},\mf{m}_{p_2}$ and $p_1\neq p_2$. Then by part (a), $\mf{l_{p_1}},\mf{l_{p_2}}\sub \mf{p}$, whence $A = \mf{l_{p_1}}+\mf{l_{p_2}}\sub \mf{p}$ contradicting that prime ideals are proper.\\
+
+    Suppose that $X\sub \Spec(A)$ is irreducible and suppose $\mf{p}_1, \mf{m}_2\in X$ are closed points.
+  \end{proof}
 
   \emph{Question.} Is $A$ Noetherian?
 \end{homeworkProblem}
 
 
 \begin{homeworkProblem}
-  \textbf{(a)}: For $A = C[0,1]$, show that every $\mf{m}\in\Specm(A)$ properly contains some $\mf{p}$ and in particular, $\Spec(A)\neq \Specm(A)$.\\
+  \textbf{(a)}: For $A = C[0,1]$, show that every $\mf{m}\in\Specm(A)$ properly contains some $\mf{p}$ and in particular, $\Spec(A)\neq \Specm(A)$.
 
-  \textbf{(b)}: Show that $\Specm(A)$ is dense in $\Spec(A)$. \\
+  \begin{proof}
+    Let $p\in I$ such that $\m_p = \m$. Choose some $f\in\m$ so that $f(q)\neq 0$ for $q\neq p$. Consider the sets $S_1 = A\setminus \m$ and $S_2 = \{ f^k: k\geq 0\}$. Note that $S_1$ is multiplicative as $\m$ is maximal hence prime and $S_2$ is clearly multiplicative. Thus $S=S_1 S_2$ is multiplicative. Consider the poset
+    \[
+      \ms{S} = \{\text{ideals }\mf{a}\sub A : \mf{a}\cap S = \emptyset\}
+    \]
+    ordered by inclusion. Suppose that $(\mf{a}_i)_{i\in J}$ is a chain in $\ms{S}$. By total ordering, $\mf{a}:=\bigcup_{i\in J}\mf{a_i}$ is an ideal and $\mf{a}\cap S = \bigcup_{i\in J}\mf{a_i}\cap S = \emptyset$, so $\mf{a}\in \ms{S}$. Thus $\mf{a}$ is an upper bound in $\ms{S}$ for the chain.\\
+
+    Now by Zorn's lemma, there exists an ideal $\mf{p}\sub A$ maximal with respect to the property that $\mf{p}\cap S = \empty$. We claim that $\mf{p}$ is prime. Suppose, for the sake of contradiction, that $\mf{p}$ is not prime. Then there exist $a,b\in A\setminus\mf{p}$ such that $ab\in\mf{p}$. Let $I_a = (a) + \mf{p}$, $I_b = (b) + \mf{p}$. Then $I_a,I_b\supsetneq \mf{p}$, so by maximality of $\mf{p}$ in the poset $\ms{S}$ there exist $s_1\in I_a\cap S$ and $s_2\in I_b\cap S$. We compute that
+    \[
+      s_1 s_2 \in I_a I_b = ((a)+\mf{p})((b)+\mf{p}) = (ab) + \mf{p} = \mf{p},
+    \]
+    however as $S$ is multiplicative $s_1 s_2\in S$, contradicting that $\mf{p}\cap S = \emptyset$. Thus $\mf{p}\in \Spec(A)$\\
+
+    Noting that $S_1 \sub S$, $\mf{p}\cap S = \emptyset$ implies $\mf{p}\sub A\setminus S \sub A\setminus S_1 = \mf{m}$. Also, $S_2\sub S$ implies that $\mf{p}\cap S_2 = \emptyset$ whence $f\in \mf{m}\setminus\mf{p}$, so $\mf{p}\subsetneq \mf{m}$.
+  \end{proof}
+
+  \textbf{(b)}: Show that $\Specm(A)$ is dense in $\Spec(A)$.
+
+  \begin{proof}
+    First let $X\sub \Spec(A)$ be an arbitrary subset (we shall later set $X = \Spec(A)$). Then we compute
+
+    \begin{align*}
+      \Spec(A)\setminus \cls{X} &= \Spec(A)\setminus \bigcap_{\substack{X\sub V(\mf{a})\\ \mf{a}\sub A}}V(\mf{a}) =  \bigcup_{\substack{X\sub V(\mf{a})\\ \mf{a}\sub A}} \Spec(A)\setminus V(\mf{a})
+      % \supseteq \bigcup_{\substack{f\in A \text{ s.t.}\\f\in \mf{p}\,\forall \mf{p}\in X}} \Spec(A)\setminus V(f) = \bigcup_{\substack{f\in A \text{ s.t.}\\f\in \mf{p}\,\forall \mf{p}\in X}} D(f)
+    \end{align*}
+
+    Suppose, for the sake of contradiction, that there is some $\mf{p}\in \Spec(A)\setminus\cls{\Specm(A)}$. Then by the above computation, there exists some ideal $\mf{a}\sub A$ such that $\Specm(A)\sub V(\mf{a})$ and $\mf{p}\in \Spec(A)\setminus V(\mf{a})$. However, then $\mf{a}\sub \mf{m}_p$ for all $p\in I$, whence $\mf{a} = 0$. Thus $\mf{p}\in \Spec(A)\setminus V(\mf{a}) = \Spec(A)\setminus V(0) = \emptyset$, which is absurd.
+  \end{proof}
 
   \textbf{(c)}: It follows from Problem 2(c) that $\Specm(A)$ is compact in the topology induced from $\Spec(A)$. At the same time, it is dense in $\Spec(A)$, which is strictly bigger. So, there appears to be a contradiction with the basic facts from topology. Resolve this contradiction.
+
+  \begin{solution}
+    As the space $\Spec(A)$ with the Zariski topology is non-Hausdorff, compactness does not necessarily imply closedness. Hence, $\Specm(A)$ is compact but not closed in $\Spec(A)$, resolving this problem.
+  \end{solution}
 \end{homeworkProblem}
 
 
