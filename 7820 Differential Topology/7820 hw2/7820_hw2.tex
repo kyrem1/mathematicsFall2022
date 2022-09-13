@@ -1,0 +1,235 @@
+\documentclass[12pt,letterpaper]{article}
+
+%--------Packages--------
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{xspace}
+\usepackage{graphicx}
+\usepackage{hhline}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{braket}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{enumerate}
+\usepackage{delarray}
+\usepackage{mathtools}
+\usepackage{fullpage}
+\usepackage{faktor} % For quotients
+\usepackage{mathrsfs}
+
+\usepackage[italicdiff]{physics} % For differentials
+\usepackage{bbm} % For indicator
+
+% \usepackage{quiver}
+\usepackage[linguistics]{forest}
+
+
+
+
+%--------Page Setup--------
+
+\pagestyle{empty}%
+
+\setlength{\hoffset}{-1.54cm}
+\setlength{\voffset}{-1.54cm}
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\setlength{\headheight}{0pt}
+
+\setlength{\oddsidemargin}{0pt}
+
+\setlength{\textwidth}{195mm}
+\setlength{\textheight}{250mm}
+
+
+%--------Macros--------
+
+\newcommand{\sub}{\subseteq}
+\newcommand{\lcm}{\text{lcm}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\mf}[1]{\mathfrak{#1}}
+\newcommand{\ms}[1]{\mathscr{#1}}
+\newcommand{\sO}{\mathcal{O}}
+\newcommand{\cyclic}[1]{\langle#1\rangle}
+\newcommand{\units}[1]{#1 ^{\times}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\lr}[1]{\left(#1\right)}
+\newcommand{\lrvert}[1]{\left\lvert#1\right\rvert}
+
+\DeclarePairedDelimiterX{\inp}[2]{\langle}{\rangle}{#1, #2}
+
+%----Switch phi and varphi
+% \let\temp\phi
+% \let\phi\varphi
+% \let\varphi\temp
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\N}{\mathbb{N}\xspace}
+\newcommand{\I}{\mathbb{I}\xspace}
+\newcommand{\R}{\mathbb{R}\xspace}
+\newcommand{\Z}{\mathbb{Z}\xspace}
+\newcommand{\Q}{\mathbb{Q}\xspace}
+\newcommand{\G}{\mathbb{G}\xspace}
+
+\renewcommand{\H}{\mathcal{H}}
+\newcommand{\M}{\mathcal{M}}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\res}{res}
+% \DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\Sym}{Sym}
+% \DeclareMathOperator{\dv}{div}
+\DeclareMathOperator{\alb}{alb}
+\DeclareMathOperator{\img}{Im}
+\DeclareMathOperator{\et}{et}
+\DeclareMathOperator{\ck}{coker}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Cor}{Cor}
+\DeclareMathOperator{\Ac}{at}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\fc}{frac}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Mod}{Mod}
+\DeclareMathOperator{\Cone}{Cone}
+\DeclareMathOperator{\FI}{FI}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Alb}{Alb}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\ab}{ab}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\fr}{frac}
+\DeclareMathOperator{\Int}{Int}
+\let\Span\relax
+\DeclareMathOperator{\Span}{Span}
+\DeclareMathOperator{\Ran}{Ran}
+
+
+
+%----Analysis
+\newcommand{\summ}{\sum\limits}
+% \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\thicc}{\bigg}
+\newcommand{\eps}{\varepsilon}
+\newcommand*\cls[1]{\overline{#1}}
+\newcommand{\ind}{\mathbbm{1}}
+\DeclareMathOperator{\sgn}{sgn}
+
+
+%--------Theorem environments--------
+\newtheorem{definition}{Definition}[]
+\newtheorem{lemma}{Lemma}[]
+\newtheorem{corollary}{Corollary}[]
+\newtheorem{theorem}{Theorem}[]
+\theoremstyle{remark}
+\newtheorem*{claim}{Claim}
+
+
+\newenvironment{solution}
+{\begin{proof}[Solution]}
+{\end{proof}}
+
+
+\makeatletter
+\newcommand{\thickhline}{%
+    \noalign {\ifnum 0=`}\fi \hrule height 1pt
+    \futurelet \reserved@a \@xhline
+}
+\newcolumntype{"}{@{\hskip\tabcolsep\vrule width 1pt\hskip\tabcolsep}}
+\makeatother
+
+% --------Problem environment--------
+\setlength\parindent{0pt}
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{homeworkProblemCounter}
+\setcounter{homeworkProblemCounter}{1}
+
+
+\newenvironment{homeworkProblem}[1][-1]{
+    \ifnum#1>0
+        \setcounter{homeworkProblemCounter}{#1}
+    \fi
+    \section{Problem \arabic{homeworkProblemCounter}}
+    \setcounter{partCounter}{1}
+    \stepcounter{homeworkProblemCounter}
+}
+
+
+%--------Metadata--------
+\title{MATH 7410 Homework 1}
+\author{James Harbour}
+
+\begin{document}
+\maketitle
+
+\begin{homeworkProblem}
+    Let $ L:\R^n\to\R^m $ be a linear map. For any $ p\in\R^n $, there is a canonical identification $ T_p(\R^n)\to \R^n $ given by 
+    \[
+        \sum a^i \pdv{x^i}\vert_p\mapsto a = (a^1,\ldots, a^n)
+    \]
+
+    Show that the differential $ L_{*,p}:T_p(R^n)\to T_{L(p)}(R^m) $ is the map $ L:\R^n\to \R^m $ itself, with the identification of the tangent spaces as above.
+
+
+
+\end{homeworkProblem}
+
+    
+
+\begin{homeworkProblem}
+   If $ M $ and $ N  $ are manifolds, let $ \pi_1:M\times N\to M $ and $ \pi_2:M\times N \to N $ be the two projections. Prove that for $ (p,q)\in M\times N  $, 
+   \[
+       (\pi_{1*},\pi_{2*}: T_{(p,q)}(M\times N) \to T_p M \times T_q N
+   \]
+   is an isomorphism.
+
+
+
+
+\end{homeworkProblem}
+
+
+\begin{homeworkProblem}
+    Let $ G $ be a Lie group with multiplication map $ \mu: G\times G\to G $, 
+    inverse map $ \iota:G\to G $, and identity element $ e $. \\
+
+    \textbf{(a)}: Show that the differential at the identity of the multiplication
+    map $ \mu $ is addition: 
+    \begin{align*}
+        \mu_{*,(e,e)}:T_e G \times T_e G\to T_e G, \\
+        \mu_{*,(e,e)}(X_e,Y_e) = X_e + Y_e.
+    \end{align*} 
+    (\emph{Hint}: First, compute $ \mu_{*,(e,e)}(X_e,0) $ and $ \mu_{*,(e,e)}(0,Y_e) $ using Proposition 8.18). \\
+
+
+    \textbf{(b)}: Show that the differential at the identity of $\iota$ is the negative:
+    \begin{align*}
+        \iota_{*,e}:T_e G\to T_e G\\ 
+        \iota_{*,e}(X_e) = -X_e.
+    \end{align*}
+
+    (\emph{Hint}: Take the differential of $ \mu(c(t), (t\circ c)(t) = e $.)
+
+    
+    
+
+
+\end{homeworkProblem}
+
+\begin{homeworkProblem}
+ Show that $ T_p^1 M\sub T_p^2 M $.
+
+
+\end{homeworkProblem}
+
+
+\end{document}
