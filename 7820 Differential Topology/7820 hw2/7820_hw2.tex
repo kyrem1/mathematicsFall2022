@@ -57,7 +57,6 @@
 \newcommand{\ra}{\rangle}
 \newcommand{\lr}[1]{\left(#1\right)}
 \newcommand{\lrvert}[1]{\left\lvert#1\right\rvert}
-
 \DeclarePairedDelimiterX{\inp}[2]{\langle}{\rangle}{#1, #2}
 
 %----Switch phi and varphi
@@ -186,13 +185,36 @@
     
 
 \begin{homeworkProblem}
-   If $ M $ and $ N  $ are manifolds, let $ \pi_1:M\times N\to M $ and $ \pi_2:M\times N \to N $ be the two projections. Prove that for $ (p,q)\in M\times N  $, 
-   \[
-       (\pi_{1*},\pi_{2*}: T_{(p,q)}(M\times N) \to T_p M \times T_q N
-   \]
-   is an isomorphism.
+    If $ M $ and $ N  $ are manifolds, let $ \pi_1:M\times N\to M $ and $ \pi_2:M\times N \to N $ be the two projections. Prove that for $ (p,q)\in M\times N $,
+    \[
+        (\dd{(\pi_{1})}_{(p,q)},\dd{(\pi_{2*})}_{(p,q)}): T_{(p,q)}(M\times N) \to T_p M \times T_q N
+    \]
+    is an isomorphism.
+    
+    \begin{proof}
+        %Choose charts $ (U,\phi),(V,\psi) $ around $ p\in M $ and $ q\in N $. Let $ \hat{\phi}_{i} = r_i\circ\phi$ and $\hat{\psi}_{j} = s_j\circ \psi $ where $ r_i $ are the standard corrdinates on $ \R^m $ and $ s_j $are the standard coordinates on $ \R^n $.
+        %Then $ \pdv{\hat{\phi}_{i}} \eval_p $ and $ \pdv{\hat{\psi}_{j}} \eval_q $ form bases for $ T_{p}M $ and $ T_{q}N $ respectively. 
+        Let $ \iota_{1}: M\hookrightarrow M\times N $ and $ \iota_{2}: N\hookrightarrow M\times N $ be given by $ \iota_{1}(m)=(m,q) $ and $ \iota_{2}(n)=(p,n) $, the natural inclusions. Then $ \pi_{1}\circ \iota_{1}=id_M $, $ \pi_{2}\circ\iota_{2}=id_N $, $ \pi_{2}\circ \iota_{1}=q $, $ \pi_{1}\circ \iota_{2}=p$. 
+        Taking differentials with respect to $ p $ and $ q $ and applying the chain rule, we compute that
+        \begin{align*}
+            \dd{(\pi_{1})}_{(p,q)} \circ \dd(\iota_{1})_{p} &= id_{T_p M} \quad \quad& \dd{(\pi_{2})}_{(p,q)} \circ \dd(\iota_{2})_{q} = id_{T_q M} \\
+            \dd{(\pi_{2})}_{(p,q)} \circ \dd(\iota_{1})_{p} &= 0 \quad \quad& \dd{(\pi_{1})}_{(p,q)} \circ \dd(\iota_{2})_{q} =0.
+        \end{align*}
+        Define a map $ F:T_p M\times T_qN\to T_{(p,q)}(M\times N) $ by $ F(X_p,Y_q) = \dd{(\iota_{1})}_p (X_p) + \dd{(\iota_{2})}_q (Y_q) $. Then we compute
+        \begin{align*}
+            (\dd{(\pi_{1})}_{(p,q)},\dd{(\pi_{2*})}_{(p,q)})\circ F &= ( \dd{(\pi_{1})}_{(p,q)}\dd{(\iota_{1})}_{p} +  \dd{(\pi_{1})}_{(p,q)}\dd{(\iota_{2})}_{q},\,\,  \dd{(\pi_{2})}_{(p,q)}\dd{(\iota_{1})}_{p} +  \dd{(\pi_{2})}_{(p,q)}\dd{(\iota_{2})}_{q}) \\
+            &= (id_{T_p M},id_{T_q N}) = id_{T_{p}M\times T_{q}N}.
+        \end{align*}
+        Thus the desired map is right invertible and hence surjective. As the map is linear and the dimensions of the domain and target space are finite and equal, this map is in fact an isomorphism.
 
 
+
+
+
+
+
+    \end{proof}
+    
 
 
 \end{homeworkProblem}
@@ -214,7 +236,13 @@
         Let $ X_e, Y_e\in T_e G $ and choose curves $\alpha_1,\alpha_2:
         (-\epsilon,\epsilon)\to G  $ such that $\alpha_{1}(0)=\alpha_{2}(0)= 
         e $ and $\dv{\alpha_1}{t}\vert_0=X_e $, $\dv{\alpha_{2}}{t} \vert_0= Y_e$.
-        Consider $ \beta_{1},\beta_{2} $ given by $ \beta_1(t) = (\alpha_{1}(t),e) $ and $ \beta_{2}(t) = (e,\alpha_{2}(t)) $. Then  
+        Consider $ \beta_{1},\beta_{2} $ given by $ \beta_1(t) = (\alpha_{1}(t),e)$ and $ \beta_{2}(t) = (e,\alpha_{2}(t))$. Then $ \dv{\beta_{1}}{t}\vert_0=(X_e,e) $, $\dv{\beta_{2}}{t} \vert_0=(e,Y_e)$.\\
+
+        Now we compute, by Proposition 8.18, that
+        \[
+            \mu_{*,(e,e)}(X_e,0) = \dv{(\mu\circ\beta_{1})}{t}\eval_0 = \dv{\alpha_{1}}{t}\eval_0 = X_e.
+        \]
+        Likewise $ \mu_{*,(e,e)}(0,Y_e) = Y_e $. So by linearity of the differential, the claim follows. 
     \end{proof}
 
     \textbf{(b)}: Show that the differential at the identity of $\iota$ is the negative:
@@ -225,6 +253,13 @@
 
     (\emph{Hint}: Take the differential of $ \mu(c(t), (t\circ c)(t)) = e $.)
     
+    \begin{proof}
+        Let $ X_e\in T_{e}G $ and choose smooth $ \alpha:(-\eps,\eps)\to G $ such that $ \alpha(0)=e $ and $ \dv{\alpha}{t} \eval_0 = X_e $. Consider the map $ (-\eps,\eps) \to G $ given by $ t\mapsto \mu(\alpha(t),(\iota\circ\alpha)(t))=e$. This is a constant smooth map and 
+        \[
+            0 = \dv{\mu(\alpha(t),(\iota\circ\alpha)(t))}{t}\eval_0 = X_e + \dv{(\iota\circ\alpha)}{t}\eval_0 = X_e + \iota_{*,e}(X_e),    
+        \] 
+        whence the claim follows.
+    \end{proof}
     
     
 
