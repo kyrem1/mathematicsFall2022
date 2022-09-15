@@ -164,7 +164,7 @@
 
 
 %--------Metadata--------
-\title{MATH 7410 Homework 1}
+\title{MATH 7410 Homework 2}
 \author{James Harbour}
 
 \begin{document}
@@ -178,7 +178,20 @@
 
     Show that the differential $ L_{*,p}:T_p(R^n)\to T_{L(p)}(R^m) $ is the map $ L:\R^n\to \R^m $ itself, with the identification of the tangent spaces as above.
 
+    \begin{proof}
+        Fix the standard basis $ \{\eta_{i}\} $, $ \{\xi_{j}\} $ of $ \R^n $ and $ \R^m $ respectively. For $ f \in C_p ^\infty (\R^m)$, $ v = \sum_{i=1}^{n} v^i \pdv{x_i} \eval_p  $, 
+        \[
+            \dd{(L)}_{p}(v)(f) = \sum_{i=1}^{n} v^{i} \pdv{(f\circ L)}{x_i} = 
+        \]
+        Let $ (a_{ij}) $ be the matrix corresponding to $ L $ with respect to the standard bases.
+        For $ 1\leq j\leq m $ let $ L_j:\R^n\to \R $ be given by $ L_j(\sum_{i=1}^{n}c^i\eta_{i})=\sum_{i=1}^{n}c^{i} a_{ij} $. So, in coordinates, $ L = (L_{1},\ldots,L_{m}) $. Now, for $ f \in C_p ^\infty (\R^m)$ and $ 1\leq i\leq n $,
+        \[ 
+            \pdv{(f\circ L)}{x_i} \eval_p = \pdv{x_{i}} f\lr{L_{1},\ldots,L_{n}}\eval_p = \sum_{j=1}^{m}\pdv{f}{y_j} \eval_{L(p)} \pdv{y_{j}}{x_{i}}\eval_p = \sum_{j=1}^{m} \pdv{f}{y_{j}} \eval_{L(p)} \pdv{L_{j}}{x_{i}} \eval_{p} = 
+            \sum_{j=1}^{m}a_{ij} \pdv{f}{y_{j}} \eval_{L(p)} 
+        \]
+        so it follows that $ \dd{L}_{p}(\pdv{x_{i}}\eval_p) = \sum_{j=1}^{m}a_{ij}\pdv{y_{j}} \eval_{L(p)} $. Thus, under the aforementioned identification, by linearity $ \dd{L}_{p}=L$.
 
+    \end{proof}
 
 \end{homeworkProblem}
 
@@ -192,8 +205,6 @@
     is an isomorphism.
     
     \begin{proof}
-        %Choose charts $ (U,\phi),(V,\psi) $ around $ p\in M $ and $ q\in N $. Let $ \hat{\phi}_{i} = r_i\circ\phi$ and $\hat{\psi}_{j} = s_j\circ \psi $ where $ r_i $ are the standard corrdinates on $ \R^m $ and $ s_j $are the standard coordinates on $ \R^n $.
-        %Then $ \pdv{\hat{\phi}_{i}} \eval_p $ and $ \pdv{\hat{\psi}_{j}} \eval_q $ form bases for $ T_{p}M $ and $ T_{q}N $ respectively. 
         Let $ \iota_{1}: M\hookrightarrow M\times N $ and $ \iota_{2}: N\hookrightarrow M\times N $ be given by $ \iota_{1}(m)=(m,q) $ and $ \iota_{2}(n)=(p,n) $, the natural inclusions. Then $ \pi_{1}\circ \iota_{1}=id_M $, $ \pi_{2}\circ\iota_{2}=id_N $, $ \pi_{2}\circ \iota_{1}=q $, $ \pi_{1}\circ \iota_{2}=p$. 
         Taking differentials with respect to $ p $ and $ q $ and applying the chain rule, we compute that
         \begin{align*}
@@ -206,13 +217,6 @@
             &= (id_{T_p M},id_{T_q N}) = id_{T_{p}M\times T_{q}N}.
         \end{align*}
         Thus the desired map is right invertible and hence surjective. As the map is linear and the dimensions of the domain and target space are finite and equal, this map is in fact an isomorphism.
-
-
-
-
-
-
-
     \end{proof}
     
 
@@ -260,16 +264,21 @@
         \] 
         whence the claim follows.
     \end{proof}
-    
-    
-
 
 \end{homeworkProblem}
 
+
+
 \begin{homeworkProblem}
- Show that $ T_p^1 M\sub T_p^2 M $.
+    Show that $ T_p^1 M\sub T_p^2 M $.
 
-
+    \begin{proof}
+        Fix $ p\in M $ and choose a chart $ (U,\phi) $ on $ \R^n $ adapted to $ M = M^k $ containing $ p $. Let $ \alpha: (-\epsilon,\epsilon)\to M $ be a smooth curve such that $ \alpha(0)=p $ and without loss of generality assume that $ \alpha((-\epsilon,\epsilon))\sub U \cap M $. Define $ \beta = \phi\vert_{\phi(M\cap U)}\circ \alpha $, so $ \beta $ is a curve in $ \R^k $. It follows by the chain rule that 
+        \[
+            \dot{\alpha} (0) = \dv{t}  \phi^{-1}\vert_{\phi(U\cap M}\circ \beta\eval_0 = d_{\phi(p)}(\phi^{-1}\vert_{\phi(U\cap M)}) ( \dot{\beta}(0)) \in   d_{\phi(p)}(\phi^{-1}\vert_{\phi(U\cap M)}) = T_{p}^{2}M
+        \]
+        thus proving the claim.
+    \end{proof}
 \end{homeworkProblem}
 
 
