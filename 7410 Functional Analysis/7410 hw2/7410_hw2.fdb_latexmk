@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1663548756 "7410_hw2.tex" "7410_hw2.pdf" "7410_hw2" 1663548756
+["pdflatex"] 1663645362 "7410_hw2.tex" "7410_hw2.pdf" "7410_hw2" 1663645362
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1650183167 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1650183167 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1650183167 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -169,8 +169,8 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1650183167 39911 2da6c67557ec033436fe5418a70a8a61 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1662517633 4278762 af3ac1370db81a450c1118eabf1fe718 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1662517624 2927658 4c7efcd3babe36e9796bc983e4057dd8 ""
-  "7410_hw2.aux" 1663548756 442 45c1982b0c60d6e65f2b358bdc6c4dba "pdflatex"
-  "7410_hw2.tex" 1663548755 13183 9b9d92ff1e5629686f13c1743dfee57f ""
+  "7410_hw2.aux" 1663645362 442 45c1982b0c60d6e65f2b358bdc6c4dba "pdflatex"
+  "7410_hw2.tex" 1663645362 13626 2b158faf97ca1f938770c8a645ae5a96 ""
   (generated)
   "7410_hw2.aux"
   "7410_hw2.log"

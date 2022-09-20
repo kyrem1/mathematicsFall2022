@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.9.6)  18 SEP 2022 20:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.9.6)  19 SEP 2022 23:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -627,25 +627,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 178--179
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 190--191
+
+ []
+
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 218--220
+Underfull \hbox (badness 10000) in paragraph at lines 220--222
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--255
+Underfull \hbox (badness 10000) in paragraph at lines 256--257
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 276--277
+Underfull \hbox (badness 10000) in paragraph at lines 278--279
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 278--280
+Underfull \hbox (badness 10000) in paragraph at lines 280--282
 
  []
 
@@ -653,13 +658,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 278--280
 Here is how much of TeX's memory you used:
  25129 strings out of 478238
  587123 string characters out of 5850457
- 895558 words of memory out of 5000000
+ 896558 words of memory out of 5000000
  43006 multiletter control sequences out of 15000+600000
  479052 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 98i,12n,103p,1584b,237s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 98i,12n,103p,1584b,213s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on 7410_hw2.pdf (3 pages, 153125 bytes).
+Output written on 7410_hw2.pdf (3 pages, 152809 bytes).
 PDF statistics:
  82 PDF objects out of 1000 (max. 8388607)
  50 compressed objects within 1 object stream

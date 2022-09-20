@@ -187,11 +187,9 @@
   \textbf{(a)}: Given $ Y\leq X $ normed linear spaces with $ Y \neq X $, prove that for all $ \eps>0 $ there is an $ x\in X $ with $ \norm{x} = 1 $ so that the distance from $ x $ to $ Y $ is at least $ 1-\eps $. 
 
   \begin{proof}
-    Suppose that the statement fails. Then there is some $ \eps\in(0,1) $ at which it fails. Then for $ x\in X$ such that $ \norm{x} = 1 $, $ dist(x,Y)<1-\eps $. Let $ x_0 $ satisfy the previous statement and be such that $ x_0\not\in Y $. By Hahn Banach, there exists a $ \phi\in X^{*} $ such that $ \norm{\phi}= \frac{1}{dist(x_{0},Y)}$, $ \phi(x_0)=1 $, and $ \phi\vert_Y=0 $. So, $ \norm{\phi}>\frac{1}{1-\eps} $. \\
+    Let $ Q:X\to X/Y $ be the corresponding quotient map. We claim that $ \norm{Q}= 1 $. We have already shown that $ \norm{Q} \leq 1 $. Pick $ x_{0}\in X\setminus Y $ and let $ d = dist(x_{0},Y) $. By Hahn Banach, there exists a linear functional $ \phi\in X^{*} $ such that $ \norm{\phi} = d >0 $, $ \phi(x_{0})=1 $, $ \phi\vert_Y = 0 $. Now, by problem 1, we have $ \widetilde{\phi} :X/Y\to \F$ such that $ \widetilde{\phi}\circ Q = \phi $ and $ \norm{\phi}= \norm{\widetilde{\phi}} $. Then $ \norm{\phi}\leq \norm{\widetilde{\phi}}\norm{Q} = \norm{\phi}\norm{Q} $, whence $ \norm{Q}\geq 1 $. \\
 
-
-    %TODO Figure out how to do this.
-    Let $ Q:X\to X/Y $ be the corresponding quotient map. For all $ x\in X $ with 
+    So $ \norm{Q} =1 $, whence $ 1 = \sup_{\norm{x}\leq 1}\norm{Qx}= \sup_{\norm{x}=1}d(x,Y)$, where the second equality follows from the fact that $ X/Y\neq 0 $. As $ 1-\eps < 1 $, there exists an $ x\in X $ with $ \norm{x}=1 $ such that $ d(x,Y)\geq 1-\eps $.
   \end{proof}
 
 
