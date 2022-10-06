@@ -1,0 +1,267 @@
+\documentclass[12pt,letterpaper]{article}
+
+%--------Packages--------
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{xspace}
+\usepackage{graphicx}
+\usepackage{hhline}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{braket}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{enumerate}
+\usepackage{delarray}
+\usepackage{mathtools}
+\usepackage{fullpage}
+\usepackage{faktor} % For quotients
+\usepackage{mathrsfs}
+
+\usepackage[italicdiff]{physics} % For differentials
+\usepackage{bbm} % For indicator
+
+% \usepackage{quiver}
+\usepackage[linguistics]{forest}
+
+
+
+
+%--------Page Setup--------
+
+\pagestyle{empty}%
+
+\setlength{\hoffset}{-1.54cm}
+\setlength{\voffset}{-1.54cm}
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\setlength{\headheight}{0pt}
+
+\setlength{\oddsidemargin}{0pt}
+
+\setlength{\textwidth}{195mm}
+\setlength{\textheight}{250mm}
+
+
+%--------Macros--------
+
+\newcommand{\sub}{\subseteq}
+\newcommand{\lcm}{\text{lcm}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\mf}[1]{\mathfrak{#1}}
+\newcommand{\ms}[1]{\mathscr{#1}}
+\newcommand{\sO}{\mathcal{O}}
+\newcommand{\cyclic}[1]{\langle#1\rangle}
+\newcommand{\units}[1]{#1 ^{\times}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\lr}[1]{\left(#1\right)}
+\newcommand{\lrvert}[1]{\left\lvert#1\right\rvert}
+
+\DeclarePairedDelimiterX{\inp}[2]{\langle}{\rangle}{#1, #2}
+
+%----Switch phi and varphi
+% \let\temp\phi
+% \let\phi\varphi
+% \let\varphi\temp
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\N}{\mathbb{N}\xspace}
+\newcommand{\I}{\mathbb{I}\xspace}
+\newcommand{\R}{\mathbb{R}\xspace}
+\newcommand{\Z}{\mathbb{Z}\xspace}
+\newcommand{\Q}{\mathbb{Q}\xspace}
+\newcommand{\G}{\mathbb{G}\xspace}
+
+\renewcommand{\H}{\mathcal{H}}
+\newcommand{\M}{\mathcal{M}}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\res}{res}
+% \DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\Sym}{Sym}
+% \DeclareMathOperator{\dv}{div}
+\DeclareMathOperator{\alb}{alb}
+\DeclareMathOperator{\img}{Im}
+\DeclareMathOperator{\et}{et}
+\DeclareMathOperator{\ck}{coker}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Cor}{Cor}
+\DeclareMathOperator{\Ac}{at}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\fc}{frac}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Mod}{Mod}
+\DeclareMathOperator{\Cone}{Cone}
+\DeclareMathOperator{\FI}{FI}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Alb}{Alb}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\ab}{ab}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\fr}{frac}
+\DeclareMathOperator{\Int}{Int}
+\let\Span\relax
+\DeclareMathOperator{\Span}{Span}
+\DeclareMathOperator{\Ran}{Ran}
+\DeclareMathOperator{\ran}{ran}
+
+
+%----Analysis
+\newcommand{\summ}{\sum\limits}
+% \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\thicc}{\bigg}
+\newcommand{\eps}{\varepsilon}
+\newcommand*\cls[1]{\overline{#1}}
+\newcommand{\ind}{\mathbbm{1}}
+\DeclareMathOperator{\sgn}{sgn}
+
+
+%--------Theorem environments--------
+\newtheorem{definition}{Definition}[]
+\newtheorem{lemma}{Lemma}[]
+\newtheorem{corollary}{Corollary}[]
+\newtheorem{theorem}{Theorem}[]
+\theoremstyle{remark}
+\newtheorem*{claim}{Claim}
+
+
+\newenvironment{solution}
+{\begin{proof}[Solution]}
+{\end{proof}}
+
+
+\makeatletter
+\newcommand{\thickhline}{%
+    \noalign {\ifnum 0=`}\fi \hrule height 1pt
+    \futurelet \reserved@a \@xhline
+}
+\newcolumntype{"}{@{\hskip\tabcolsep\vrule width 1pt\hskip\tabcolsep}}
+\makeatother
+
+% --------Problem environment--------
+\setlength\parindent{0pt}
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{homeworkProblemCounter}
+\setcounter{homeworkProblemCounter}{1}
+
+
+\newenvironment{homeworkProblem}[1][-1]{
+    \ifnum#1>0
+        \setcounter{homeworkProblemCounter}{#1}
+    \fi
+    \section{Problem \arabic{homeworkProblemCounter}}
+    \setcounter{partCounter}{1}
+    \stepcounter{homeworkProblemCounter}
+}
+
+
+%--------Metadata--------
+\title{MATH 7410 Homework 2}
+\author{James Harbour}
+
+\begin{document}
+\maketitle
+
+\begin{homeworkProblem}
+    \textbf{(a)}: Let $ X $ be a separable Banach space. Show that $ Ball(X^{*})=\{\phi\in X^{*}:\norm{\phi}\leq1\} $ is $ wk^{*} $-metrizable. 
+    
+    \begin{proof}
+        Note that it suffices to show that a countable subset of the seminorms defining the LCS topology on $ X^{*} $ in fact define the topology on $ Ball(X^{*}) $.\\
+
+        Choose a norm dense sequence $ (x_{n})_{n=1}^{\infty} $ in $ X $. We claim that the seminorms $ \rho_{x_{n}} = |ev_{x_{n}}(\cdot)| : X^{*}\to[0,+\infty) $ define the restriction of the $ wk^{*} $-topology to $ Ball(X^{*}) $. \\
+
+        Suppose that $ (\phi_{\alpha})_{\alpha\in I} $ is a net in $ Ball(X^{*}) $and $ \phi\in Ball(X^{*}) $ is such that $ \phi_{\alpha}(x_{n})\to \phi(x) $ for all $ n\in\N $. Now let $ x\in X $ and fix $ \eps>0 $. Then by density there is some  $ n\in \N $ such that $ \norm{x-x_{n}}< \eps/3 $. Moreover, by assumption, there is some $ \alpha_{0}\in I $ such that for all $ \alpha \geq \alpha_{0} $, $ | \phi_{\alpha}(x_{n})-\phi(x_{n}) | <\eps/3 $. Now, for all $ \alpha\geq \alpha_{0} $, 
+        \begin{align*}
+            | \phi(x) - \phi_{\alpha}(x)| \leq | \phi(x-x_{n}) | + | \phi(x_{n}) - \phi_{\alpha}(x)| &\leq \norm{x-x_{n}}+| \phi_{\alpha}(x_{n}) -\phi(x_{n}) | + | \phi_{\alpha}(x_{n}) - \phi_{\alpha}(x)| \\
+            &<\frac{\eps}{3}+\frac{\eps}{3}+ \norm{\phi_{\alpha}}\norm{x_{n}-x} <\eps
+        \end{align*}
+        so in fact, for nets in $ Ball(X^{*}) $, pointwise convergence on $ (x_{n})_{n}^{\infty} $ implies pointwise convergence everywhere, and thus $ wk^{*} $-convergence of the underlying nets. 
+    \end{proof}
+
+    \textbf{(b)}: If $ X $ is a Banach space, show that there is a compact space $ K $ such that $ X $ is isometrically isomorphic to a closed subspace of $ C(K) $. 
+
+\end{homeworkProblem}
+
+
+\begin{homeworkProblem}
+    Let $ Bil(X\times Y, Z) $ be the space of bounded, bilinear maps from $ X\times Y\to Z $. \\
+
+    \textbf{(a)}: Suppose that $ B_{x},B^{y} $ are bounded for each $ x\in X $,$ y\in Y $. Prove that there is a constant $ M>0 $ so that 
+    \[
+        \norm{B(x,y)}\leq M \norm{x}\norm{y}
+    \]
+    (use the Principle of Uniform Boundedness).
+
+    \begin{proof}
+        For $ x\in X $, $ y\in Ball(Y) $, note that $ \norm{B_{y}(x)}\leq \norm{B_{x}} $.
+        Then by the principle of uniform boundedness, $ C:=\sup_{y\in Ball(Y)}\norm{B_{y}}<+\infty $. Now observe that
+        \[
+            \sup_{x\in Ball(X),\, y\in Ball(Y)} \norm{B(x,y)} = \sup_{x\in Ball(X),\, y\in Ball(Y)} \norm{B_{y}(x)} \leq \sup_{y\in Ball(Y)} \norm{B_{y}} = C,
+        \]
+        whence the claim follows by scaling.
+    \end{proof}
+
+    \textbf{(b)}: Show that the map $ \Phi:Bil(X\times Y,\F)\to B(X,Y^{*}) $ given by $ [\widetilde{\Phi}(B)(x)](y)=B(x,y) $ is a well-defined, isometric isomorphism. \\
+
+    \textbf{(c)}: By switching names, it follows that the map $ \widetilde{\Phi}: Bil(X\times Y,\F)\to B(Y,X^{*}) $ given by $ [\widetilde{\Phi}(B)(y)](x) = B(x,y) $ is a well-defined, isometric isomorphism. So the map $ \widetilde{\Phi}\circ \Phi^{-1} $ is an isometric isomorphism $ B(X,Y^{*})\cong B(Y,X^{*}) $. What is this isomorphism?
+
+
+
+
+\end{homeworkProblem}
+
+
+\begin{homeworkProblem}
+    Let $ X,Y $ be Banach spaces. And let $ (T_{n})_{n=1}^{\infty} $ be a sequence in $ B(X,Y) $. \\
+
+    \textbf{(a)}: If $ T_{n} $ converges in the WOT to $ T\in B(X,Y) $ show that $ \sup_{n}\norm{T_{n}}<+\infty $. (In particular, if $ T_{n} $ converges strongly, then it is norm).
+
+    \begin{proof}
+        Fix $ x\in X $. Then for all $ \phi\in Y^{*} $, $ \phi(T_{n}x)\to \phi(Tx) $ so $ \sup_{n\in\N}| \phi(T_{n}x)|<+\infty $.   
+    \end{proof}
+
+    \textbf{(b)}: If $ \sup_{n}\norm{T_{n}}<+\infty $ and there is a norm dense $ D\sub X $ so that $ T_{n}x $ converges for every $ x\in D$, show that $ T_{n}x $ converges for all $ x\in X $, that $ Tx = \lim_{n\to\infty}T_{n}x $ is a bounded operator, and that $ \norm{Tx-T_{n}x}\xrightarrow{n\to\infty}0 $ for every $ x\in X $. 
+
+
+\end{homeworkProblem}
+
+
+\begin{homeworkProblem}
+    Let $ X,Y $ be Banach spaces. And let $ (T_{n})_{n=1}^{\infty} $ be a sequence in $ B(X,Y) $. Suppose that $ \sup_{n}\norm{T_{n}} <+\infty $ and that $ D\sub X $, $ G\sub Y^{*} $ are norm dense. Assume that $ \lim_{n}\phi(T_{n}x) $ exists for all $ \phi\in G $,$ x\in D $. 
+
+    \begin{lemma}
+        If $ X $ is a Banach space, $ (x_{n})_{n=1}^{\infty} $ a sequence in $ X $ such that $ \phi(x_{n}) $
+    \end{lemma}
+    
+    \begin{proof}
+        Fix $ x\in X, \phi\in Y^{*} $, and $ \eps>0 $. Choose $ y\in D, \psi\in G $ such that $ \norm{x-y},\norm{\phi-\psi}<\eps $. Then, for $ n,m\in\N $, we compute that 
+    \end{proof}
+
+    \textbf{(a)}: Show that $ \lim_{n} \phi(T_{n}x) $ exists for all $ \phi\in Y^{*} $, $ x\in X $. \\
+
+    \textbf{(b)}: Show that for every $ x\in X $, there is a well-defined bounded operator $ S:X\to Y^{**} $ given by $ S(x)(\phi) = \lim_{n\to\infty} \phi(T_{n}x) $. \\
+
+    \textbf{(c)}: If $ T_{n}x $ converges weakly to an element of $ Y $ for every $ x\in D $, show that $ S(X)\sub Y $, and that $ T_{n}\to S $ WOT.
+
+
+\end{homeworkProblem}
+
+
+\begin{homeworkProblem}
+    Let $ G $ be a countable, discrete, group and $ \lambda:G\to B(l^{2}(G)) $ be given by $ (\lambda(g) \xi)(h) = \xi(g^{-1}h) $. \\
+
+    \textbf{(a)}: Let $ (g_{n})_{n=1}^{\infty} $ be a sequence in $ G $ so that for every finite $ F\sub G $ we have $ \{n:g_{n}\in F\} $ is finite. Show that $ \lim_{n\to\infty} \lambda(g_{n})=0 $ in WOT. (Hint: consider first acting on pairs of vectors which are finitely supported and applying the preceding problem to reduce to this case).\\
+
+    \textbf{(b)}: Suppose $ G $ is infinite. If $ \mc{K}\sub l^{2}(G) $ is closed and $ \lambda(g)\mc{K} = \mc{K} $ for every $ g\in G $, and $ \mc{K}\neq 0 $, show that $ \mc{K} $ is finite-dimensional. (Hint: construct a sequence satisfies the hypothesis of the preceding problem. If $ \mc{K} $ is finite-dimensional, then $ \lambda $ applied to the sequence restricted to $ \mc{K} $ converges to $ 0 $ in WOT, and hence in any other LCS topology on $ B(\mc{K}) $. Consider using this for one of the other operator topologies to get a contradiction).
+\end{homeworkProblem}
+
+\end{document}

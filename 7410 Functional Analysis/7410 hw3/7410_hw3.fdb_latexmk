@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1664465165 "7820_hw3.tex" "7820_hw3.pdf" "7820_hw3" 1664465165
+["pdflatex"] 1665062966 "7410_hw3.tex" "7410_hw3.pdf" "7410_hw3" 1665062966
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1650183167 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1650183167 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1650183167 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -26,13 +26,12 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1650183167 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1650183167 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1650183167 36741 fa121aac0049305630cf160b86157ee4 ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1650183167 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1650183167 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1650183167 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1650183167 32362 179c33bbf43f19adbb3825bb4e36e57a ""
-  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1650183167 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1650183167 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1650183167 32569 5e5ddc8df908dea60932f3c484a54c0d ""
-  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1650183167 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1650183167 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb" 1650183167 36118 fad905eba93cff5bce1e185fe980a177 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1650183167 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
@@ -169,9 +168,9 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1650183167 39911 2da6c67557ec033436fe5418a70a8a61 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1662517633 4278762 af3ac1370db81a450c1118eabf1fe718 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1662517624 2927658 4c7efcd3babe36e9796bc983e4057dd8 ""
-  "7820_hw3.aux" 1664465165 360 4671c8b7613e58ba16a2cec3e8d54bef "pdflatex"
-  "7820_hw3.tex" 1664465165 16300 f1b8293d95366ca225d2db9cfd3ef809 ""
+  "7410_hw3.aux" 1665062966 442 89b4ff6b6bb97f6833527bbbfdf9cd3e "pdflatex"
+  "7410_hw3.tex" 1665062966 10283 aad288a3b22d1ca203599cd8edc8b59f ""
   (generated)
-  "7820_hw3.aux"
-  "7820_hw3.log"
-  "7820_hw3.pdf"
+  "7410_hw3.aux"
+  "7410_hw3.log"
+  "7410_hw3.pdf"
