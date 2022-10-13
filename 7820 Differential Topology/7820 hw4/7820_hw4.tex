@@ -192,7 +192,18 @@
     Give an example of manifolds $ M,N $, and of a smooth function $ F:M\to N $ with a regular value which is a limit point of critical values.
 
     \begin{proof}[Example]
-        
+        Consider $ f:\R\to \R $ given by $ f(x)=e^{-x}\sin(x) $. Then $ f '(x) = e^{-x}(\cos(x)-\sin(x)) $. 
+        \[
+             0 = f '(x) = e^{-x}(\cos(x)-\sin(x)) \iff \cos(x)=\sin(x),
+        \]
+        so the critical points of $ f $ are $ x_{k}=\frac{\pi}{4}+\pi k $ for $ k\in \Z $. These critical points correspond to the critical values
+        \[
+            f(x_{k}) = e^{\frac{-\pi}{4}-\pi k}\lr{\cos(\frac{-\pi}{4}-\pi k) + \sin(\frac{-\pi}{4}-\pi k)} \begin{dcases*}
+            \sqrt{2}e^{-\frac{\pi}{4}-\pi k} & when $k$ is even\\
+            -\sqrt{2}e^{-\frac{\pi}{4}-\pi k}& when $k$ is odd
+            \end{dcases*}.
+        \]
+        Note $ \pm\sqrt{2}e^{-\frac{\pi}{4}-\pi k}\xrightarrow{k\to\infty}0 $, thus $ 0 $ is a limit point of the critical values $ \{f(x_{k}\}_{k\in\Z} $, but $ 0 $ is not a critical value of $ f $ as $ x_{k}\neq 0 $ for all $ k\in\Z $, so $ 0 $ is a regular value of $ f $ which is a limit point of critical values of $ f $.
     \end{proof}
 \end{homeworkProblem}
 
