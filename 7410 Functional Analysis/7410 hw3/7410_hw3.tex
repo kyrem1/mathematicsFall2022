@@ -189,6 +189,13 @@
 
     \textbf{(b)}: If $ X $ is a Banach space, show that there is a compact space $ K $ such that $ X $ is isometrically isomorphic to a closed subspace of $ C(K) $. 
 
+    \begin{proof}
+        Let $ \iota: X\hookrightarrow \F^{X^{*}} $ be the canonical evaluation map, and for brevity write $ \hat{x} = \iota(x) $. Note that each $ \hat{x} $ is weak-$ * $ continuous, so $ \iota(X)\sub C(X^{*},wk^{*}) $. Let $ K = (Ball(X^{*}),wk^{*}) $, so $ K $ is a compact space by Banach-Alaoglu. Define a map $ \phi:X\to C(K) $ by $ \phi(x) = \iota(x)\vert_{Ball(X^{*})} $.
+
+        % TODO show isometry and surjectivity using Hahn-Banach.
+
+    \end{proof}
+
 \end{homeworkProblem}
 
 
@@ -238,6 +245,21 @@
     \end{proof}
 
     \textbf{(b)}: If $ \sup_{n}\norm{T_{n}}<+\infty $ and there is a norm dense $ D\sub X $ so that $ T_{n}x $ converges for every $ x\in D$, show that $ T_{n}x $ converges for all $ x\in X $, that $ Tx = \lim_{n\to\infty}T_{n}x $ is a bounded operator, and that $ \norm{Tx-T_{n}x}\xrightarrow{n\to\infty}0 $ for every $ x\in X $. 
+
+    \begin{proof}
+        Fix $ x\in X $, $ \eps>0 $ and choose $ z\in D $ such that $ \norm{x-z}<\eps $. Set $ C = \sup_{n}\norm{T_{n}} $. Then, we compute that 
+        \begin{align*}
+            \norm{T_{n}x-T_{m}x} &\leq \norm{T_{n}x-T_{n}z} + \norm{T_{n}z - T_{m}x} < C\eps + \norm{T_{n}z - T_{m}x} \\
+            & \leq C\eps + \norm{T_{n}z-T_{m}z} + \norm{T_{m}z - T_{m}x} < 2C\eps + \norm{T_{n}z - T_{m}z} \xrightarrow{n,m\to\infty}0,
+        \end{align*}
+        so by completeness, $ T_{n}x $ converges for all $ x\in X $.\\
+
+        Now define $ Tx = \lim_{n\to\infty}T_{n}x $. This map is well-defined and linear, so it suffices to show that it is bounded. But 
+        \[
+            \norm{Tx} = \lim_{n\to\infty}\norm{T_{n}x} \leq \liminf_{n\to\infty}\norm{T_{n}}\norm{x} \leq C\norm{x},
+        \]
+        whence $ \norm{T} \leq C $ so $ T $ is a bounded operator. Lastly, suppose that $ x\in X $. Then
+    \end{proof}
 
 
 \end{homeworkProblem}
