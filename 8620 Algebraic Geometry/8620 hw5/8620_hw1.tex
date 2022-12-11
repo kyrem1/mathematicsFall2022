@@ -1,0 +1,225 @@
+\documentclass[12pt,letterpaper]{article}
+
+%--------Packages--------
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{xspace}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{braket}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{enumerate}
+\usepackage{delarray}
+\usepackage{mathtools}
+\usepackage{fullpage}
+\usepackage{faktor} % For quotients
+\usepackage{mathrsfs}
+\usepackage{quiver}
+\usepackage{tikz}
+
+\usepackage[linguistics]{forest}
+
+
+
+
+%--------Page Setup--------
+
+\pagestyle{empty}%
+
+\setlength{\hoffset}{-1.54cm}
+\setlength{\voffset}{-1.54cm}
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\setlength{\headheight}{0pt}
+
+\setlength{\oddsidemargin}{0pt}
+
+\setlength{\textwidth}{195mm}
+\setlength{\textheight}{250mm}
+
+
+%--------Macros--------
+
+\newcommand{\ilm}[1]{\begin{psmallmatrix} #1 \end{psmallmatrix}}
+\newcommand{\ilmb}[1]{\boxed{\begin{smallmatrix} #1 \end{smallmatrix}}}
+
+\newcommand{\sub}{\subseteq}
+\newcommand{\lcm}{\text{lcm}}
+\newcommand{\ms}[1]{\mathscr{#1}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\mf}[1]{\mathfrak{#1}}
+\newcommand{\m}{\mf{m}}
+\newcommand{\sO}{\mathcal{O}}
+\newcommand{\cyclic}[1]{\langle#1\rangle}
+\newcommand{\units}[1]{#1 ^{\times}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\lr}[1]{\left(#1\right)}
+\newcommand{\divides}{\bigm|}
+%----Switch phi and varphi
+\let\temp\phi
+\let\phi\varphi
+\let\varphi\temp
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\N}{\mathbb{N}\xspace}
+\newcommand{\I}{\mathbb{I}\xspace}
+\newcommand{\R}{\mathbb{R}\xspace}
+\newcommand{\Z}{\mathbb{Z}\xspace}
+\newcommand{\Q}{\mathbb{Q}\xspace}
+\newcommand{\G}{\mathbb{G}\xspace}
+\let\O\relax
+\newcommand{\O}{\mathcal{O}}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Specm}{Specm}
+\DeclareMathOperator{\res}{res}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\dv}{div}
+\DeclareMathOperator{\alb}{alb}
+\let\Im\relax
+\DeclareMathOperator{\Im}{Im}
+\DeclareMathOperator{\et}{et}
+\DeclareMathOperator{\ck}{coker}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Cor}{Cor}
+\DeclareMathOperator{\Ac}{at}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\fc}{frac}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Mod}{Mod}
+\DeclareMathOperator{\Cone}{Cone}
+\DeclareMathOperator{\FI}{FI}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Alb}{Alb}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\ab}{ab}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\fr}{frac}
+\DeclareMathOperator{\spn}{span}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\ch}{char}
+\DeclareMathOperator{\Fix}{Fix}
+
+
+%----Analysis
+\newcommand{\dd}[2][]{\frac{\partial^{#1}}{\partial {#2}^{#1}}}
+\newcommand{\summ}{\sum\limits}
+\newcommand{\norm}[1]{\left \vert \left \vert #1 \right \vert \right \vert}
+\newcommand{\thicc}{\bigg}
+\newcommand{\eps}{\varepsilon}
+\newcommand*\cls[1]{\overline{#1}}
+
+
+%--------Theorem environments--------
+\newtheorem{definition}{Definition}[]
+\newtheorem{lemma}{Lemma}[]
+\newtheorem{corollary}{Corollary}[]
+\newtheorem{theorem}{Theorem}[]
+\theoremstyle{remark}
+\newtheorem*{claim}{Claim}
+
+
+\newenvironment{solution}
+{\begin{proof}[Solution]}
+{\end{proof}}
+
+
+\makeatletter
+\newcolumntype{"}{@{\hskip\tabcolsep\vrule width 1pt\hskip\tabcolsep}}
+\makeatother
+
+% --------Problem environment--------
+\setlength\parindent{0pt}
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{homeworkProblemCounter}
+\setcounter{homeworkProblemCounter}{1}
+
+
+\newenvironment{homeworkProblem}[1][-1]{
+    \ifnum#1>0
+        \setcounter{homeworkProblemCounter}{#1}
+    \fi
+    \section{Problem \arabic{homeworkProblemCounter}}
+    \setcounter{partCounter}{1}
+    \stepcounter{homeworkProblemCounter}
+}
+
+
+%--------Metadata--------
+\title{MATH 8620 Homework 5}
+\author{James Harbour}
+
+
+\begin{document}
+\maketitle
+
+\begin{homeworkProblem}
+    Let $ F $ be a presheaf on a topological space $ X $, and let $ f:X\to Y $ be a continuous map. The \textit{direct image} $ f_{*}F $ is defined by the following data:
+    \[
+        (f_{*}F)(V) = F(f^{-1}(V)) \text{ for open } V\sub Y, \text{ and } \rho(f_{*}F)_{V_{2}}^{V_{1}} = \rho(F)_{f^{-1}(V_{2})}^{f^{-1}(V_{1})} \text{ for open } V_{2}\sub V_{1}.
+    \]
+    Show that $ f_{*}F $ is a presheaf. Furthermore, show that if $ F $ is a sheaf then $ f_{*}F $ is also a sheaf.
+\end{homeworkProblem}
+
+
+\begin{homeworkProblem}
+    LEt $ X $ be a closed subspace of a topological space $ Y $, and let $ \iota:X\to Y $ be the identity embedding. Let $ Sh(X) $ and $ Sh(Y) $ be the categories of sheaves of abelian groups on $ X $ and $ Y $ respectively. Given $ F\in Sh(X) $, identify the stalks of the sheaf $ \iota_{*}F $. Use this to show that the functor $ \iota_{*}:Sh(X)\to Sh(Y) $ is exact.
+\end{homeworkProblem}
+
+
+\begin{homeworkProblem}
+    Let $ X=Y $ be th unit circle $ \{z\in \C : |z| = 1\} $, and let $ f:x\to Y $ be given by $ f(z) = z^{2} $. Fix an abelian group $ S $ and let $ F $ be the constant sheaf of abelian groups on $ X $ with value group $ S $ (recall that for an open subset $ U \sub X $, the group $ F(U) $ consists of all locally constant functions $ U\to S $). Show that for any $ y\in Y $, the stalk $ (f_{*}F)_{y} $ is isomorphic to $ S\times S $. On the other hand, let $ G $ be the constant sheaf on $ Y $ with value group $ S\times S $. While $ G $ has the same stalks as $ f_{*}F $, show that $ G\not \simeq f_{*}F $. (\textit{Hint}. Compute global sections.)
+\end{homeworkProblem}
+
+\begin{homeworkProblem}
+    Let $ X $ be a topological space, and let $ \mc{B} $ be a basis of the topology. Given two sheaves $ F $ and $ G $ on $ X $, assume that for every $ U\in\mc{B} $ there is a morphism $ f_{U}: F(U)\to G(U) $, and that for $ U,V\in \mc{B} $ such that $ V\sub U $, the diagram
+    \[\begin{tikzcd}
+	    {F(U)} && {G(U)} \\
+	    \\
+	    {F(V)} && {G(V)}
+	    \arrow["{f_U}", from=1-1, to=1-3]
+	    \arrow["{\rho(F)_V^U}"', from=1-1, to=3-1]
+	    \arrow["{\rho(G)_V^U}", from=1-3, to=3-3]
+	    \arrow["{f_V}"', from=3-1, to=3-3]
+    \end{tikzcd}\]
+    commutes. Show that there exists a unique morphism of sheaves $ f:F\to G $ for which $ f_{U} $ for $ U\in \mc{B} $ coincide with the given ones. Furthermore, show that if $ f_{U} $ is surjective (resp., injective) for every $ U\in \mc{B} $, then $ f $ is surjective (resp., injective) as a \textit{morphism of sheaves}.
+\end{homeworkProblem}
+
+
+\begin{homeworkProblem}
+    LEt $ (X,\O_{X}) $ and $ (Y, \O_{Y}) $ be ringed spaces. Suppose we are given an open covering $ \{U_{i}\}_{i\in I} $ of $ X $, and for each $ i\in I $ a morphism $ (f_{i},f_{i}^{\#}):(U_{i},\O_{X}\vert U_{i}) \to (Y,\O_{Y}) $. If $ (f_{i},f_{i}^{\#}) $ and $ (f_{j}, f_{j}^{\#}) $ coincide on the overlap $ U_{i}\cap U_{j} $ for all $ i,j\in I $ then there exists a morphism $ (f,f^{\#}) $ that restricts to $ (f_{i},f_{i}^{\#}) $ on  $ (U_{i},\O_{X}\vert U_{i}) $.
+\end{homeworkProblem}
+
+
+\begin{homeworkProblem}
+    Let $ A $ be a commutative ring, and let $ \{M_{i},\tau_{i}^{j}\} $ be a direct system of $ A $-modules over a directed set $ I $. For any $ A $-module $ N $, one can consider the direct system $ \{M_{i}\otimes_{A} N, \tau_{i}^{j}\otimes id_{N}\} $. Show that there is a natural isomorphism of $ A $-modules $ (\lim_{\to}M_{i}) \otimes_{A} N \cong \lim_{\to}(M_{i}\otimes_{A}N)$.
+\end{homeworkProblem}
+
+
+\begin{homeworkProblem}
+    A commutative ring $ A $ is called \textit{reduced} if its nilradical is zero. Show that $ A $ is reduced if and only if all localizations $ A_{\mf{p}} $ for all $ \mf{p}\in\Spec(A) $ are reduced. This can be generalized to schemes: a scheme $ X $ is defined to be reduced if the ring $ \O_{X}(U) $ is reduced for all open $ U\sub X $. Show that a scheme $ X $ is reduced if and only if all stalks $ \O_{X,x} $ are reduced.
+\end{homeworkProblem}
+
+
+\begin{homeworkProblem}
+    As in class, consider $ A =K[x,y] $ and $ X=\Spec(A) $. Let $ M $ denote that $ A $-module $ A/I $ where $ I = xA $. Calculate the stalks $ \widetilde{M_{\mf{p}}} $ of the corresponding sheaf $ \widetilde{M} $ for all $ \mf{p}\in X $. Is $ \widetilde{M} $ a skyscraper sheaf?
+\end{homeworkProblem}
+
+
+
+
+
+\end{document}

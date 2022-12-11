@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.9.6)  18 OCT 2022 17:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.10.27)  6 NOV 2022 17:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -640,51 +640,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 203--204
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 220--221
+Underfull \hbox (badness 10000) in paragraph at lines 226--228
 
  []
 
 
-Overfull \hbox (18.47412pt too wide) in paragraph at lines 238--239
+Underfull \hbox (badness 10000) in paragraph at lines 236--238
+
+ []
+
+
+Overfull \hbox (18.47412pt too wide) in paragraph at lines 263--264
 [][] \OMS/cmsy/m/n/12 j[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^^\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 j \OT1/cmr/m/n/12 = [][] \OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 ^^^\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 j \OML/cmm/m/it/12 < \OT1/cmr/m/n/12 +\OMS/cmsy/m/n/12 1$\OT1/cmr/m/n/12 , so by the prin-ci-ple of uni-form bound-ed-ness, $[][] [] = [][] [] \OML/cmm/m/it/12 <
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 254--256
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 269--270
-
- []
-
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 307--308
+Underfull \hbox (badness 10000) in paragraph at lines 279--281
 
  []
 
 
-Overfull \hbox (20.92838pt too wide) detected at line 315
-\OMS/cmsy/m/n/12 h\OML/cmm/m/it/12 ^^U\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 g[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ^^X; ^^Q\OMS/cmsy/m/n/12 i \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 ^^X\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 g[]x\OT1/cmr/m/n/12 )[] = [] [] \OML/cmm/m/it/12 [][]^^N[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 g[]x\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ^^N[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = [] [] \OML/cmm/m/it/12 [][]^^N[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 g[]x\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ^^N[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = [] \OML/cmm/m/it/12 [][]^^N[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 y[]x[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 :
+Underfull \hbox (badness 10000) in paragraph at lines 294--295
+
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 324--325
+Underfull \hbox (badness 10000) in paragraph at lines 339--340
+
+ []
+
+
+Overfull \hbox (20.92838pt too wide) detected at line 347
+\OMS/cmsy/m/n/12 h\OML/cmm/m/it/12 ^^U\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 g[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ^^X; ^^Q\OMS/cmsy/m/n/12 i \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 ^^X\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 g[]x\OT1/cmr/m/n/12 )[] = [] [] \OML/cmm/m/it/12 [][]^^N[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 g[]x\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ^^N[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = [] [] \OML/cmm/m/it/12 [][]^^N[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 g[]x\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ^^N[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = [] \OML/cmm/m/it/12 [][]^^N[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 y[]x[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 356--357
 
  []
 
 [4] (./7410_hw3.aux) ) 
 Here is how much of TeX's memory you used:
  25129 strings out of 478238
- 587123 string characters out of 5850457
- 897572 words of memory out of 5000000
+ 587123 string characters out of 5850455
+ 899572 words of memory out of 5000000
  43006 multiletter control sequences out of 15000+600000
  479052 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  98i,18n,103p,1584b,265s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on 7410_hw3.pdf (4 pages, 161347 bytes).
+Output written on 7410_hw3.pdf (4 pages, 163843 bytes).
 PDF statistics:
  85 PDF objects out of 1000 (max. 8388607)
  52 compressed objects within 1 object stream

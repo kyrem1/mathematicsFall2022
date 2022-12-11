@@ -217,11 +217,38 @@
         whence the claim follows by scaling.
     \end{proof}
 
-    \textbf{(b)}: Show that the map $ \Phi:Bil(X\times Y,\F)\to B(X,Y^{*}) $ given by $ [\widetilde{\Phi}(B)(x)](y)=B(x,y) $ is a well-defined, isometric isomorphism. \\
+    \textbf{(b)}: Show that the map $ \Phi:Bil(X\times Y,\F)\to B(X,Y^{*}) $ given by $ [{\Phi}(B)(x)](y)=B(x,y) $ is a well-defined, isometric isomorphism. 
+
+    \begin{proof}\ \\
+        \underline{well-defined}: For fixed $ x\in X $, we have that
+        \[
+            \norm{B_{x}} = \sup_{\norm{y}\leq 1} |B(x,y)| \leq \norm{B} <+\infty
+        \]
+        so $ B_{x} \in Y^{*} $.\\
+
+        \underline{isometric}: $ B\in Bil(X\times Y,\F) $, $ x\in X $. On one hand, from 
+        \[
+            \norm{\Phi(B)} = \sup_{\norm{x}\leq 1}\norm{B(x,\cdot)}_{Y^{*}} = \sup_{\norm{x}\leq 1} \sup_{\norm{y}\leq 1} |B(x,y)|
+        \]
+        it is clear that $ \norm{\Phi(B)} \leq \norm{B} $. Suppose that $ x\in X $, $ y\in Y $, so $ |B(x,y)| \leq \norm{B}\norm{x}\norm{y} $. Then
+        \[
+            |B(x,y)| = |B_{x}(y)|\leq \norm{B_{x}}\norm{y} \leq \norm{\Phi(B)}\norm{x}\norm{y},
+        \] 
+        whence by minimality $ \norm{B}\leq \norm{\Phi(B)} $. Thus $ \Phi $ is isometric and $ \Phi(B)\in B(X,Y^{*}) $.\\
+        
+
+        \underline{isomorphism}: It suffices to show surjectivity. Suppose that $ \Gamma\in B(X,Y^{*}) $. Define a map $ B:X\times Y\to \F $ by $ B(x,y) = \Gamma(x)(y) $. For $ x\in X $ and $ y\in Y $, we have that 
+        \[
+            |B(x,y)| \leq \norm{\Gamma(x)}\norm{y}  \leq \norm{\Gamma} \norm{x} \norm{y},
+        \]
+        whence $ B\in Bil(X\times Y, \F) $. Moreover, by construction $ \Phi(B) = \Gamma $.
+    \end{proof}
 
     \textbf{(c)}: By switching names, it follows that the map $ \widetilde{\Phi}: Bil(X\times Y,\F)\to B(Y,X^{*}) $ given by $ [\widetilde{\Phi}(B)(y)](x) = B(x,y) $ is a well-defined, isometric isomorphism. So the map $ \widetilde{\Phi}\circ \Phi^{-1} $ is an isometric isomorphism $ B(X,Y^{*})\cong B(Y,X^{*}) $. What is this isomorphism?
 
-
+    \begin{proof}[Solution]
+        
+    \end{proof}
 
 
 \end{homeworkProblem}
@@ -296,7 +323,14 @@
     \textbf{(c)}: If $ T_{n}x $ converges weakly to an element of $ Y $ for every $ x\in D $, show that $ S(X)\sub Y $, and that $ T_{n}\to S $ WOT.
 
     \begin{proof}
-        By assumption, for all $ x\in D $ there exists some $ y_{x}\in Y $ such that $ T_{n}x\to y_{x} $ weakly. 
+        Since $ Y $ is norm-closed inside $ Y^{**} $, $ S $ is norm-continuous, and $ D\sub S^{-1}(Y) $, it follows that $ X\sub S^{-1}(Y) $ i.e. $ S(X)\sub Y $. Now, suppose that $ x\in X $ and $ \phi\in Y^{***} $. Then there is some $ y\in Y $ and $ \psi\in Y^{*} $ such that $ S(x) = \widehat{y} $ and $ \phi\vert_{Y} = \psi $.
+        
+        By construction, $ S(x)(\psi) = \lim_{n\to\infty} \psi(T_{n}x) $, so we compute that
+        \[
+            \phi(\widehat{T_{n}x}) = \widehat{\psi}\widehat{T_{n}x} = \widehat{T_{n}x}(\psi) = \psi(T_{n}x) \to S(x)(\psi) = \phi(S(x)) = \phi(\widehat{y}).
+        \]
+        Hence, $ T_{n}\to S $ WOT.
+
     \end{proof}
 
 

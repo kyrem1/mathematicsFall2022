@@ -165,7 +165,7 @@
 
 
 %--------Metadata--------
-\title{MATH 7410 Homework 4 (In-Progress)}
+\title{MATH 7410 Homework 4}
 \author{James Harbour}
 
 \begin{document}
@@ -190,6 +190,10 @@
 
     \begin{proof}
         
+        By weak convergence, we have that $ \inp{h_{n}}{h}\to \inp{h}{h} = \norm{h}^{2} $, whence
+        \[
+            \norm{h_{n}-h}^{2} = \norm{h_{n}}^{2} + \norm{h}^{2} - 2\Re(\inp{h_{n}}{h}) \xrightarrow{n\to\infty} \norm{h}^{2}  + \norm{h}^{2} - 2\norm{h}^{2} = 0
+        \]
     \end{proof}
 \end{homeworkProblem}
 
@@ -212,10 +216,19 @@
         \[
             B^{*}(\hat{x})(\phi_{\alpha}) = \hat{x}(B(\phi_{\alpha})) = B(\phi_{\alpha})(x)\to B(\phi)(x) = B^{*}(\hat{x})(\phi),
         \]
-        so $ B^{*}(\hat{x}) $ is $ \text{weak}^{*} $-continuous, whence there exists some $ y\in Y $ such that $ B^{*}(\hat{x}) = \hat{y} $. 
+        so $ B^{*}(\hat{x}) $ is $ \text{weak}^{*} $-continuous, whence there exists some $ y\in Y $ such that $ B^{*}(\hat{x}) = \hat{y} $. Define $ A:X\to Y $ by $ Ax = y $.
 
-        %TODO uniqueness of y (or independence upon choice of y), show A is bounded operator. Show B = A^*
-    
+        \begin{itemize}
+            \item (Uniqueness of $ y $): Suppose that $ y_{0}\in Y $ also has that $ \widehat{y_{0}} = B^{*}(\widehat{x}) = \widehat{y} $. Then by injectivity of $ \iota_{Y} $, it follows that $ y_{0} = y $.
+            \item ($ A $ is a bounded operator): Suppose that $ \norm{x}\leq 1 $. Then
+                \[
+                    \norm{Ax} = \norm{y} = \norm{\widehat{y}} = \norm{B^{*}(\widehat{x})} \leq \norm{B^{*}} = \norm{B} < +\infty. 
+                \]
+            \item ($ B = A^{*} $): Let $ \phi\in Y^{*}$, $ x\in X $. Then we compute
+                \[
+                    A^{*}(\phi)(x) = \phi(Ax) = \widehat{Ax}(\phi) = B^{*}(\widehat{x})(\phi) = \widehat{x}(B(\phi)) = B(\phi)(x).
+                \]
+        \end{itemize}
     \end{proof}
 
 \end{homeworkProblem}
@@ -233,17 +246,46 @@
         \[
             \norm{(T_{\alpha}x)_{x\in F}-(Tx)_{x\in F}} = \sum_{x\in F}\norm{T_{\alpha}x-Tx} \xrightarrow{\alpha\in I} 0
         \]
-        so $ T\in \cls{C}^{SOT} $. \\
+        so $ T\in \cls{C}^{\norm{\cdot}} $. \\
 
-        \underline{$ \impliedby $}:
+        \underline{$ \impliedby $}: By assumption, for all $ \eps>0 $ and finite $ F\sub X $, there exists some $ T^{F,\eps}\in C $ such that $ \sum_{x\in F}\norm{Tx-T^{F,\eps}x} < \eps $. Define an ordering on $ P(X)_{fin}\times (0,+\infty) $ by 
+        \[
+            (F,\eps) \leq (F ',\eps ') \iff F\sub F ' \text{ and } \eps ' \leq \eps.
+        \]
+        Note that this defines a directed set. Fix $ x\in X $ and consider the net $ (T^{F,\eps}x)_{(F,\eps)} $ in $ Y $. Fix $ \eps > 0 $. Then for all $ (F, \delta)\geq (\{x\},\eps) $, it follows that 
+        \[
+            \norm{Tx - T^{F,\delta}x} < \delta \leq \eps.
+        \]
+        Thus the net $ T^{F,\eps}x \to Tx $, so by definition $ T\in \cls{C}^{SOT} $. \\
 
+        \underline{$ \implies $}: Suppose that $ T\in \cls{C}^{WOT} $. Then there is some net $ (T_{\alpha})_{\alpha\in I} $ in $ C $ such that $ T_{\alpha}\to T $ WOT. Let $ F\sub X $ finite. Then $ | \phi(T_{\alpha}x) - \phi(Tx)|\to 0 $ for every $ x\in F $ and $ \phi\in Y^{*} $. Suppose $ \psi = \sum_{x\in F} \phi_{x}\in (Y^{\oplus F})^{*} $ where $ \phi_{x}\in Y^{*} $. Then
+        \[
+            | \psi((T_{\alpha}x)_{x\in F}) - \psi((Tx)_{x\in F}) |\leq \sum_{x\in F} | \phi_{x}(T_{\alpha}x) - \phi_{x}(Tx) | \xrightarrow{\alpha\in I} 0 
+        \]
+        so $ T\in \cls{C_{F}}^{weak} $.\\
+
+        \underline{$ \impliedby $}: Define an ordering on $ P(X)_{fin}\times \ms{T}_{weak} $ by 
+        \[
+            (F,U)\leq (F ', U ') \iff F\sub F ' \text{ and } U ' \sub U \times B(X,Y)^{\oplus F ' \setminus F}.
+        \]
+        Then for all $ F\sub X $ finite and $ U $ weak-neighborhood of $ (Tx)_{x\in F} $, there is some $ T^{F,U}\in C$ such that $ (T^{F,U}x)_{x\in F} \in U $. This gives a net. Now, letting $ V $ be an SOT neighborhood of $ T $, there is some finite set $ F $ and weakly open $ U $ such that $ T^{F ',U '}\in V $ for all $ (F ', U ') \geq (F,U) $.
 
     \end{proof}
 
-    \textbf{(b)}: Suppose that $ C\sub B(X,Y) $ is convex. Show that $ \cls{C}^{WOT} = \cls{C}^{SOT} $. \\
+    \textbf{(b)}: Suppose that $ C\sub B(X,Y) $ is convex. Show that $ \cls{C}^{WOT} = \cls{C}^{SOT} $. 
 
-    \textbf{(c)}: IF $ \phi:B(X,Y)\to \F $ is linear, show that $ \phi $ is WOT-continuous if and only if it is SOT-continuous.
+    \begin{proof}
+        Fix $ F \sub X $ finite. Since $ C $ is convex, it follows that $ C_{F} $ is convex, whence $ C_{F}^{\norm{\cdot}} = C_{F}^{weak} $. Thus by part (a), the result follows.
+    \end{proof}
 
+    \textbf{(c)}: If $ \phi:B(X,Y)\to \F $ is linear, show that $ \phi $ is WOT-continuous if and only if it is SOT-continuous.
+
+    \begin{proof}
+       Note that $ \ker(\phi) $ is convex by linearity. By part (b), we have the following equivalences
+       \[
+           \phi \text{ WOT-continuous } \iff \ker(\phi) \text{ WOT-closed } \iff \ker(\phi) \text{ SOT-closed } \iff \phi \text{ SOT-continuous}.
+       \]
+    \end{proof}
 
 \end{homeworkProblem}
 
@@ -258,15 +300,24 @@
     Identify $ \Prob(I) $ with $ \{f\in l^{1}(I): f\geq 0, \norm{f}_{1}= 1\} $ and view $ l^{1}(I) \sub l^{\infty}(I)^{*} $ by $ f\mapsto \phi_{f} $ where $ \phi_{f}(g) = \sum_{i\in I} f(i) g(i) $. Show that $ \Prob(I) $ is $ \text{weak}^{*} $-dense in $ \mc{M} $. 
 
     \begin{proof}
-        Suppose, for the sake of contradiction, that there is some $ \psi\in \mc{M}\setminus\cls{\Prob(I)}^{wk^{*}} $.
-        Then there exists some $ wk^{*} $-continuous linear functional $T:l^{\infty}(I)^{*}\to\F $ such that $ \ker(T)\supseteq \cls{\Prob(I)}^{wk^{*}} $ and $ T(\psi) = 1 $.
-        Note that $ T\in (l^{\infty}(I)^{*}, wk^{*})^{*} = l^{\infty}(I)$, so there is some $ f\in l^{\infty}(I) $ such that $ T = \hat{f} $, i.e. $ T(\phi) = \phi(f) $ for all $ \phi\in l^{\infty}(I)^{*}$.
-        Then, for $ i\in I $
-        \[
-            0 = T(\delta_{i}) = \delta_{i}(f) = f(i),
-        \]
-        whence $ f=0 $ and consequently $ T = 0 $, contradicting that $ T(\psi) = 1 $.
+        Suppose, for the sake of contradiction, that there is some $ m\in \mc{M}\setminus\cls{\Prob(I)}^{wk^{*}} $.\\
 
+        By separating Hahn-Banach, there is some $ wk^{*} $-continuous linear functional $ L:l^{\infty}(I)^{*}\to\F $ and $ \alpha < \beta $ such that for all $ \mu\in \Prob(I) $
+        \[
+            \Re(L(\mu)) \leq \alpha < \beta \leq \Re(L(m)).
+        \]
+        As $ (l^{\infty}(I)^{*}, wk^{*})^{*} = l^{\infty}(I) $, there is some $ g\in l^{\infty}(I) $ such that $ L = ev_{g} $.
+        Since $ m \geq 0  $ and linear, for any $ f\in l^{\infty}(I) $, by writing $ \Re(f) $ as a difference of positive functions we see that $ m(\Re(f)) = \Re(m(f)) $.\\
+
+        For $ i\in I$, note that 
+        \[
+            L(\delta_{i}) = L(\phi_{\delta_{i}}) = \sum_{j\in I}g(j) \delta_{i}(j) = g(i),
+        \]
+        so it folows that $ \Re(g(i)) = \Re(L(\delta_{i})) \leq \alpha $ pointwise. On the other hand, by positivity of $ m $, 
+        \[
+            \beta \leq \Re(L(m)) = \Re(m(g)) = m(\Re(g)) \leq \alpha m(1) = \alpha,
+        \]
+        which is absurd.
     \end{proof}
 \end{homeworkProblem}
 

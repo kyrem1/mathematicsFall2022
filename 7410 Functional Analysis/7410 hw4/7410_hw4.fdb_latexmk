@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1667248354 "7410_hw4.tex" "7410_hw4.pdf" "7410_hw4" 1667248355
+["pdflatex"] 1670735671 "7410_hw4.tex" "7410_hw4.pdf" "7410_hw4" 1670735671
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1650183167 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1650183167 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1650183167 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -39,6 +39,7 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb" 1650183167 36118 fad905eba93cff5bce1e185fe980a177 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1650183167 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb" 1650183167 136101 f533469f523533d38317ab5729d00c8a ""
+  "/usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb" 1650183167 16077 4737ac34f0fb5608550f3780a0202c22 ""
   "/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1650183167 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex" 1650183167 992 855ff26741653ab54814101ca36e153c ""
   "/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex" 1650183167 43820 1fef971b75380574ab35a0d37fd92608 ""
@@ -170,10 +171,10 @@
   "/usr/share/texmf-dist/tex/latex/trimspaces/trimspaces.sty" 1650181202 1380 971a51b00a14503ddf754cab24c3f209 ""
   "/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty" 1650183167 56029 3f7889dab51d620aa43177c391b7b190 ""
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1650183167 39911 2da6c67557ec033436fe5418a70a8a61 ""
-  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1666899520 4278762 af3ac1370db81a450c1118eabf1fe718 ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1666899506 2927661 53f86217bd412da98518b26538d7b124 ""
-  "7410_hw4.aux" 1667248355 442 7f77a30e35cf4b90604bd42d67e3b088 "pdflatex"
-  "7410_hw4.tex" 1667248353 10418 6054205140f652685d31bf4f7e4a52cf ""
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1669683407 4278762 af3ac1370db81a450c1118eabf1fe718 ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1669683400 2927667 a867d31eaf6839be3dd39ae7de0f1045 ""
+  "7410_hw4.aux" 1670735671 442 c57c6182b1ea2aa83223176888817f5c "pdflatex"
+  "7410_hw4.tex" 1670735669 14177 a2d7591d96d1afc378e4e3b8102b7bbc ""
   (generated)
   "7410_hw4.aux"
   "7410_hw4.log"
